@@ -16,15 +16,17 @@
     <meta property="og:type" content="website" />
     <style>
       :root {
-        --bg: #f7f4ee;
+        --bg: #f6f1e8;
         --card: #ffffff;
-        --text: #1f2933;
-        --muted: #5c6670;
-        --soft: #e2d8c8;
-        --accent: #9a7b4f;
-        --button: #2f4a5a;
-        --button-hover: #263d4a;
-        --shadow: 0 24px 80px rgba(31, 41, 51, 0.09);
+        --ink: #18242d;
+        --text: #22303a;
+        --muted: #46535e;
+        --soft: #ded1bd;
+        --accent: #8b6b3d;
+        --accent-soft: #efe4d2;
+        --button: #263f4f;
+        --button-hover: #1f3340;
+        --shadow: 0 24px 80px rgba(24, 36, 45, 0.11);
         --radius: 28px;
       }
 
@@ -34,6 +36,8 @@
 
       html {
         scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
 
       body {
@@ -44,13 +48,15 @@
           -apple-system,
           BlinkMacSystemFont,
           "Segoe UI",
+          "Microsoft YaHei",
           sans-serif;
-        color: var(--text);
+        color: var(--ink);
         background:
-          radial-gradient(circle at top left, rgba(154, 123, 79, 0.12), transparent 34rem),
+          radial-gradient(circle at top left, rgba(139, 107, 61, 0.16), transparent 34rem),
+          radial-gradient(circle at top right, rgba(38, 63, 79, 0.1), transparent 32rem),
           linear-gradient(180deg, #fbf8f2 0%, var(--bg) 54%, #f1ece3 100%);
         font-size: 18px;
-        line-height: 1.8;
+        line-height: 1.72;
       }
 
       a {
@@ -71,20 +77,69 @@
 
       .hero-card,
       .section-card {
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(226, 216, 200, 0.85);
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid rgba(222, 209, 189, 0.92);
         border-radius: var(--radius);
         box-shadow: var(--shadow);
       }
 
       .hero-card {
+        position: relative;
+        overflow: hidden;
         padding: clamp(40px, 7vw, 96px);
+      }
+
+      .hero-card::before {
+        content: "";
+        position: absolute;
+        top: clamp(24px, 5vw, 58px);
+        right: clamp(28px, 6vw, 86px);
+        width: clamp(92px, 16vw, 180px);
+        height: clamp(92px, 16vw, 180px);
+        opacity: 0.09;
+        background:
+          linear-gradient(90deg, transparent 44%, var(--accent) 44% 56%, transparent 56%),
+          linear-gradient(0deg, transparent 17%, var(--accent) 17% 29%, transparent 29%);
+        pointer-events: none;
+      }
+
+      .cross-emblem {
+        position: relative;
+        width: 52px;
+        height: 52px;
+        margin: 0 0 24px;
+        border: 1px solid rgba(139, 107, 61, 0.34);
+        border-radius: 50%;
+        background: linear-gradient(180deg, #fffdf8, #f3eadb);
+        box-shadow: 0 12px 34px rgba(139, 107, 61, 0.14);
+      }
+
+      .cross-emblem::before,
+      .cross-emblem::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        border-radius: 999px;
+        background: var(--accent);
+        transform: translate(-50%, -50%);
+      }
+
+      .cross-emblem::before {
+        width: 4px;
+        height: 29px;
+      }
+
+      .cross-emblem::after {
+        width: 22px;
+        height: 4px;
+        transform: translate(-50%, -74%);
       }
 
       .eyebrow {
         margin: 0 0 18px;
         color: var(--accent);
-        font-size: 0.78rem;
+        font-size: 0.76rem;
         font-weight: 700;
         letter-spacing: 0.16em;
         text-transform: uppercase;
@@ -100,14 +155,16 @@
       h1 {
         max-width: 780px;
         margin: 0;
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.45rem, 7vw, 5.5rem);
+        font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
+        color: var(--ink);
+        font-size: clamp(2.5rem, 7vw, 5.65rem);
         font-weight: 500;
       }
 
       h2 {
         margin: 0 0 24px;
-        font-family: Georgia, "Times New Roman", serif;
+        font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
+        color: var(--ink);
         font-size: clamp(1.85rem, 3.6vw, 3.2rem);
         font-weight: 500;
       }
@@ -122,21 +179,22 @@
         margin: 32px 0 0;
         color: var(--muted);
         font-size: clamp(1.05rem, 2vw, 1.28rem);
-        line-height: 1.78;
+        line-height: 1.68;
       }
 
       .trust-line {
         margin-top: 24px;
-        color: var(--text);
-        font-size: 0.98rem;
+        color: var(--ink);
+        font-size: 1rem;
         font-weight: 700;
+        line-height: 1.62;
       }
 
       .boundary-line {
         max-width: 62ch;
         margin: 16px 0 0;
         color: var(--muted);
-        font-size: 0.92rem;
+        font-size: 0.96rem;
         line-height: 1.65;
       }
 
@@ -160,6 +218,7 @@
         color: #fff;
         font-weight: 700;
         text-decoration: none;
+        box-shadow: 0 12px 28px rgba(38, 63, 79, 0.18);
         transition:
           background 160ms ease,
           transform 160ms ease;
@@ -192,8 +251,8 @@
         max-width: none;
         margin: 0 0 22px;
         color: var(--muted);
-        font-size: 1.08rem;
-        line-height: 1.82;
+        font-size: 1.04rem;
+        line-height: 1.78;
       }
 
       .section-card p:last-child {
@@ -204,7 +263,7 @@
         padding: 18px 20px;
         border-left: 4px solid var(--accent);
         border-radius: 16px;
-        background: #fffdf9;
+        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
       }
 
       .path-list {
@@ -215,15 +274,17 @@
       }
 
       .path-item {
+        position: relative;
         padding: 18px;
         border: 1px solid var(--soft);
         border-radius: 18px;
-        background: #fffdf9;
+        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
       }
 
       .path-item strong {
         display: block;
         margin-bottom: 6px;
+        color: var(--ink);
       }
 
       .path-item span {
@@ -257,7 +318,7 @@
         height: 10px;
         border-radius: 50%;
         background: var(--accent);
-        opacity: 0.72;
+        opacity: 0.82;
       }
 
       .steps {
@@ -270,7 +331,7 @@
         padding: 24px;
         border: 1px solid var(--soft);
         border-radius: 20px;
-        background: #fffdf9;
+        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
       }
 
       .step strong {
@@ -282,7 +343,7 @@
         margin-top: 26px;
         border: 1px solid var(--soft);
         border-radius: 20px;
-        background: #fffdf9;
+        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
         overflow: hidden;
       }
 
@@ -374,6 +435,12 @@
           padding: 30px 0 6px;
         }
 
+        .hero-card::before {
+          width: 108px;
+          height: 108px;
+          opacity: 0.07;
+        }
+
         .actions {
           align-items: stretch;
           flex-direction: column;
@@ -404,6 +471,7 @@
     <main class="page">
       <section class="hero" id="top">
         <div class="hero-card">
+          <div class="cross-emblem" aria-hidden="true"></div>
           <p class="eyebrow">Grace Access Path · Free Pastor Receiving</p>
           <h1>Free Pastor Receiving is now open.</h1>
           <p class="lead">
