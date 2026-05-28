@@ -415,6 +415,81 @@
         min-width: min(100%, 280px);
       }
 
+      .callout-section {
+        border: 1px solid rgba(139, 107, 61, 0.28);
+        background:
+          linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(239, 228, 210, 0.92)),
+          linear-gradient(180deg, #fffdf9, #fbf4e9);
+      }
+
+      .callout-section h2 {
+        max-width: 18ch;
+      }
+
+      .quote-lines {
+        display: grid;
+        gap: 14px;
+        margin: 28px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .quote-lines li {
+        padding: 18px 20px;
+        border-left: 4px solid var(--accent);
+        border-radius: 0 16px 16px 0;
+        background: rgba(255, 255, 255, 0.72);
+        color: var(--ink);
+        font-size: 1.12rem;
+        line-height: 1.62;
+        font-weight: 600;
+      }
+
+      .chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .chip-list span {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 14px;
+        border: 1px solid var(--soft);
+        border-radius: 999px;
+        background: #fffdf9;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.4;
+      }
+
+      .anti-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .anti-card {
+        padding: 22px;
+        border: 1px solid var(--soft);
+        border-radius: 18px;
+        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
+      }
+
+      .anti-card strong {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--ink);
+      }
+
+      .anti-card p {
+        margin: 0;
+        font-size: 0.98rem;
+        line-height: 1.7;
+      }
+
       @media (max-width: 980px) {
         .grid {
           grid-template-columns: 1fr;
@@ -453,6 +528,10 @@
         }
 
         .path-list {
+          grid-template-columns: 1fr;
+        }
+
+        .anti-grid {
           grid-template-columns: 1fr;
         }
 
@@ -502,6 +581,74 @@
               Apply privately
             </a>
             <a class="secondary-link" href="#covenant">Read the covenant first</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card callout-section" id="relevance">
+        <h2>This is not another program to run.</h2>
+        <p>
+          For some pastors, the problem is not only that ministry is tiring. It is that care,
+          prayer, Scripture, and spiritual life have started to feel like output instead of
+          nourishment.
+        </p>
+        <ul class="quote-lines" aria-label="Common pastor language">
+          <li>Spiritual disciplines stopped feeling nourishing.</li>
+          <li>The Bible became sermon prep.</li>
+          <li>Prayer started to feel like performance.</li>
+          <li>Care became something they give, but rarely receive.</li>
+        </ul>
+        <p>
+          Free Pastor Receiving is a short <strong>online Christian receiving space</strong>:
+          pause, receive quietly, and honestly notice whether burden, rest, ministry strain, or
+          carrying capacity shifts.
+        </p>
+        <p>
+          This is not advice, counseling, another leadership resource, or a public ministry role.
+          It is a private first step on Grace Access Path.
+        </p>
+        <div class="chip-list" aria-label="What this is not">
+          <span>Not medical care</span>
+          <span>Not psychotherapy</span>
+          <span>Not a paid outcome</span>
+          <span>Not public testimony</span>
+        </div>
+      </section>
+
+      <section class="section-card callout-section" id="anti-extractive">
+        <h2>Life-giving, not extractive.</h2>
+        <p>
+          Many pastors are already under-supported. They do not need another invisible labor system
+          disguised as help.
+        </p>
+        <div class="anti-grid">
+          <div class="anti-card">
+            <strong>Private before public</strong>
+            <p>
+              The first step is not more output. It is a private place to receive before serving
+              again.
+            </p>
+          </div>
+          <div class="anti-card">
+            <strong>Pay for time and care, not outcomes</strong>
+            <p>
+              Any support around this path is about time, preparation, hospitality, and care - not
+              spiritual results, certification, or monetized power.
+            </p>
+          </div>
+          <div class="anti-card">
+            <strong>Not content suppliers</strong>
+            <p>
+              Pastors are not being asked to become performers, hosts, or content suppliers for a
+              platform.
+            </p>
+          </div>
+          <div class="anti-card">
+            <strong>Receive, notice, discern</strong>
+            <p>
+              The point is not spectacle. It is to receive quietly, notice honestly, and discern
+              carefully whether anything real changes.
+            </p>
           </div>
         </div>
       </section>
@@ -749,6 +896,21 @@
             <p>
               Stop. You may end at any time. If fear, confusion, or distress increases, do not push
               through. Seek appropriate support.
+            </p>
+          </div>
+          <div>
+            <h3>Is this asking pastors to teach, host, or produce content?</h3>
+            <p>
+              No. This is not a marketplace for pastors to perform wisdom publicly. It is a private
+              receiving path first.
+            </p>
+          </div>
+          <div>
+            <h3>What if ordinary rest, therapy, or sabbatical has not been enough?</h3>
+            <p>
+              Some pastors still need a distinct place to stop performing and receive quietly. This
+              path is for those who want to notice whether burden, rest, strain, or carrying capacity
+              shifts in a short private receiving space.
             </p>
           </div>
         </div>
