@@ -3,31 +3,33 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Free Pastor Receiving | First Open Doorway of Grace Access Path</title>
+    <title>Pastor Listening Notes | Grace Access Path</title>
     <meta
       name="description"
-      content="Free Pastor Receiving is the first open doorway of Grace Access Path: a free, private Christian receiving space for pastors who need to receive before serving again."
+      content="A listening space about what pastors carry, what support often gets wrong, and why Grace Access Path begins with private Free Pastor Receiving."
     />
-    <meta property="og:title" content="Free Pastor Receiving" />
+    <meta property="og:title" content="Pastor Listening Notes" />
     <meta
       property="og:description"
-      content="A free, voluntary, private Christian receiving path where pastors can pause, receive quietly, and help discern a wider Grace Access Path."
+      content="Patterns pastors are naming. A private path to receive before serving again."
     />
     <meta property="og:type" content="website" />
     <style>
       :root {
-        --bg: #f6f1e8;
-        --card: #ffffff;
-        --ink: #18242d;
+        --bg: #f1eadf;
+        --card: #fffcf7;
+        --ink: #132431;
         --text: #22303a;
-        --muted: #46535e;
+        --muted: #52616b;
         --soft: #ded1bd;
-        --accent: #8b6b3d;
+        --accent: #9a713d;
         --accent-soft: #efe4d2;
-        --button: #263f4f;
-        --button-hover: #1f3340;
-        --shadow: 0 24px 80px rgba(24, 36, 45, 0.11);
-        --radius: 28px;
+        --navy: #173243;
+        --button: #173243;
+        --button-hover: #102633;
+        --shadow: 0 26px 80px rgba(19, 36, 49, 0.14);
+        --radius: 24px;
+        --wall-speed: 48s;
       }
 
       * {
@@ -37,7 +39,6 @@
       html {
         scroll-behavior: smooth;
         -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
       }
 
       body {
@@ -52,27 +53,66 @@
           sans-serif;
         color: var(--ink);
         background:
-          radial-gradient(circle at top left, rgba(139, 107, 61, 0.16), transparent 34rem),
-          radial-gradient(circle at top right, rgba(38, 63, 79, 0.1), transparent 32rem),
-          linear-gradient(180deg, #fbf8f2 0%, var(--bg) 54%, #f1ece3 100%);
-        font-size: 18px;
-        line-height: 1.72;
+          radial-gradient(circle at 8% -4%, rgba(154, 113, 61, 0.2), transparent 30rem),
+          radial-gradient(circle at 94% 4%, rgba(23, 50, 67, 0.14), transparent 30rem),
+          linear-gradient(180deg, #fbf8f2 0%, var(--bg) 45%, #e8dfd0 100%);
+        font-size: 17px;
+        line-height: 1.7;
       }
 
       a {
         color: inherit;
       }
 
-      .page {
-        width: min(1080px, calc(100% - 32px));
-        margin: 0 auto;
-        padding: 48px 0 72px;
+      .site-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        backdrop-filter: blur(12px);
+        background: rgba(251, 248, 242, 0.88);
+        border-bottom: 1px solid rgba(222, 209, 189, 0.7);
       }
 
-      .hero {
-        min-height: 76vh;
-        display: grid;
+      .site-nav-inner {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 14px 0;
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .site-nav .brand {
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      .site-nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 18px;
+        font-size: 0.9rem;
+      }
+
+      .site-nav-links a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .site-nav-links a:hover {
+        color: var(--ink);
+      }
+
+      .page {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 72px;
       }
 
       .hero-card,
@@ -86,61 +126,104 @@
       .hero-card {
         position: relative;
         overflow: hidden;
-        padding: clamp(40px, 7vw, 96px);
+        padding: clamp(34px, 5.5vw, 74px);
+        margin-bottom: 28px;
+        background:
+          radial-gradient(circle at 8% 0%, rgba(240, 211, 155, 0.18), transparent 28rem),
+          linear-gradient(135deg, rgba(19, 36, 49, 0.99) 0%, rgba(23, 50, 67, 0.97) 100%);
       }
 
       .hero-card::before {
         content: "";
         position: absolute;
-        top: clamp(24px, 5vw, 58px);
-        right: clamp(28px, 6vw, 86px);
-        width: clamp(92px, 16vw, 180px);
-        height: clamp(92px, 16vw, 180px);
-        opacity: 0.09;
-        background:
-          linear-gradient(90deg, transparent 44%, var(--accent) 44% 56%, transparent 56%),
-          linear-gradient(180deg, transparent 34%, var(--accent) 34% 46%, transparent 46%);
+        inset: -18% auto auto -10%;
+        width: 380px;
+        height: 380px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(224, 198, 151, 0.22), transparent 68%);
         pointer-events: none;
       }
 
-      .cross-emblem {
+      .hero-layout {
         position: relative;
-        width: 52px;
-        height: 52px;
-        margin: 0 0 24px;
-        border: 1px solid rgba(139, 107, 61, 0.34);
-        border-radius: 50%;
-        background: linear-gradient(180deg, #fffdf8, #f3eadb);
-        box-shadow: 0 12px 34px rgba(139, 107, 61, 0.14);
+        display: grid;
+        grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.72fr);
+        gap: clamp(28px, 5vw, 72px);
+        align-items: center;
       }
 
-      .cross-emblem::before,
-      .cross-emblem::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        border-radius: 999px;
-        background: var(--accent);
-        transform: translate(-50%, -50%);
+      .hero-copy {
+        color: #fffaf1;
       }
 
-      .cross-emblem::before {
-        width: 4px;
-        height: 29px;
+      .hero-copy .eyebrow,
+      .hero-copy .lead,
+      .hero-copy .hero-bridge {
+        color: rgba(255, 250, 241, 0.88);
       }
 
-      .cross-emblem::after {
-        width: 22px;
-        height: 4px;
-        top: 43%;
-        transform: translate(-50%, -50%);
+      .hero-copy .hero-bridge {
+        color: #f8e8c8;
+      }
+
+      .hero-panel {
+        padding: clamp(22px, 3vw, 34px);
+        border: 1px solid rgba(154, 113, 61, 0.24);
+        border-radius: 24px;
+        background: rgba(255, 252, 247, 0.94);
+        box-shadow: 0 18px 50px rgba(19, 36, 49, 0.12);
+      }
+
+      .hero-panel h2 {
+        margin-bottom: 14px;
+        font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+      }
+
+      .hero-panel p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .cred-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .cred-item {
+        padding: 14px 12px;
+        border: 1px solid rgba(222, 209, 189, 0.85);
+        border-radius: 16px;
+        background: #fffdf9;
+      }
+
+      .cred-item strong {
+        display: block;
+        color: var(--ink);
+        font-size: 1.08rem;
+        line-height: 1.1;
+      }
+
+      .cred-item span {
+        display: block;
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 0.74rem;
+        line-height: 1.35;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .section-card {
+        margin-top: 28px;
+        padding: clamp(28px, 4.5vw, 56px);
       }
 
       .eyebrow {
-        margin: 0 0 18px;
+        margin: 0 0 14px;
         color: var(--accent);
-        font-size: 0.76rem;
+        font-size: 0.74rem;
         font-weight: 700;
         letter-spacing: 0.16em;
         text-transform: uppercase;
@@ -149,89 +232,68 @@
       h1,
       h2,
       h3 {
-        line-height: 1.12;
-        letter-spacing: -0.035em;
+        line-height: 1.14;
+        letter-spacing: -0.03em;
+        font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
+        font-weight: 500;
       }
 
       h1 {
-        max-width: 780px;
         margin: 0;
-        font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
-        color: var(--ink);
-        font-size: clamp(2.5rem, 7vw, 5.65rem);
-        font-weight: 500;
+        font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+        max-width: 16ch;
       }
 
       h2 {
-        margin: 0 0 24px;
-        font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
-        color: var(--ink);
-        font-size: clamp(1.85rem, 3.6vw, 3.2rem);
-        font-weight: 500;
+        margin: 0 0 20px;
+        font-size: clamp(1.65rem, 3vw, 2.6rem);
       }
 
       h3 {
-        margin: 0 0 10px;
+        margin: 0 0 8px;
         font-size: 1.05rem;
-      }
-
-      .hero-bridge {
-        max-width: 62ch;
-        margin: 24px 0 0;
-        color: var(--ink);
-        font-size: clamp(1.08rem, 2.2vw, 1.32rem);
-        font-weight: 650;
-        line-height: 1.55;
+        font-family: inherit;
+        font-weight: 700;
       }
 
       .lead {
-        max-width: 62ch;
+        max-width: 58ch;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+      }
+
+      .hero-bridge {
         margin: 20px 0 0;
-        color: var(--muted);
-        font-size: clamp(1.05rem, 2vw, 1.28rem);
-        line-height: 1.68;
-      }
-
-      .trust-line {
-        margin-top: 24px;
-        color: var(--ink);
-        font-size: 1rem;
-        font-weight: 700;
-        line-height: 1.62;
-      }
-
-      .boundary-line {
-        max-width: 62ch;
-        margin: 16px 0 0;
-        color: var(--muted);
-        font-size: 0.96rem;
-        line-height: 1.65;
+        font-size: clamp(1.05rem, 2vw, 1.22rem);
+        font-weight: 650;
+        max-width: 52ch;
       }
 
       .actions {
         display: flex;
         flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 40px;
+        gap: 12px;
+        margin-top: 32px;
         align-items: center;
       }
 
       .button {
         display: inline-flex;
-        justify-content: center;
         align-items: center;
-        min-height: 48px;
-        padding: 0 22px;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 20px;
         border-radius: 999px;
         border: 1px solid var(--button);
         background: var(--button);
         color: #fff;
         font-weight: 700;
+        font-size: 0.95rem;
         text-decoration: none;
-        box-shadow: 0 12px 28px rgba(38, 63, 79, 0.18);
-        transition:
-          background 160ms ease,
-          transform 160ms ease;
+        cursor: pointer;
+        box-shadow: 0 10px 24px rgba(38, 63, 79, 0.16);
+        transition: background 0.15s ease, transform 0.15s ease;
       }
 
       .button:hover {
@@ -239,718 +301,1013 @@
         transform: translateY(-1px);
       }
 
+      .button-ghost {
+        background: transparent;
+        color: var(--button);
+        box-shadow: none;
+        border-color: rgba(38, 63, 79, 0.35);
+      }
+
+      .button-ghost:hover {
+        background: rgba(38, 63, 79, 0.06);
+      }
+
+      .hero-copy .button {
+        border-color: #f0d39b;
+        background: #f0d39b;
+        color: #142a38;
+      }
+
+      .hero-copy .button:hover {
+        background: #f6dfaf;
+      }
+
+      .hero-copy .button-ghost {
+        background: transparent;
+        color: #fffaf1;
+        border-color: rgba(255, 250, 241, 0.42);
+      }
+
+      .hero-copy .button-ghost:hover {
+        background: rgba(255, 250, 241, 0.1);
+      }
+
       .secondary-link {
         color: var(--muted);
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         text-decoration: underline;
-        text-underline-offset: 4px;
+        text-underline-offset: 3px;
       }
 
-      .grid {
+      .micro-trust {
+        margin-top: 20px;
+        padding: 14px 18px;
+        border-radius: 14px;
+        background: rgba(248, 232, 200, 0.14);
+        border: 1px solid rgba(248, 232, 200, 0.28);
+        color: rgba(255, 250, 241, 0.92);
+        font-size: 0.92rem;
+        max-width: 52ch;
+      }
+
+      .source-grid {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px;
-      }
-
-      .section-card {
-        margin-top: 32px;
-        padding: clamp(32px, 5vw, 64px);
-      }
-
-      .section-card p {
-        max-width: none;
-        margin: 0 0 22px;
-        color: var(--muted);
-        font-size: 1.04rem;
-        line-height: 1.78;
-      }
-
-      .section-card p:last-child {
-        margin-bottom: 0;
-      }
-
-      .definition-note {
-        padding: 18px 20px;
-        border-left: 4px solid var(--accent);
-        border-radius: 16px;
-        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
-      }
-
-      .path-list {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 14px;
-        margin-top: 28px;
+        margin-top: 22px;
       }
 
-      .path-item {
-        position: relative;
-        padding: 18px;
+      .source-card {
+        padding: 20px;
         border: 1px solid var(--soft);
         border-radius: 18px;
-        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
+        background: linear-gradient(180deg, #fffdf9, #f8f0e3);
       }
 
-      .path-item strong {
+      .source-label,
+      .pattern-source {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--accent);
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .source-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .evidence-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .evidence-strip span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 0 13px;
+        border-radius: 999px;
+        background: rgba(23, 50, 67, 0.07);
+        color: var(--navy);
+        font-size: 0.82rem;
+        font-weight: 700;
+      }
+
+      .pattern-grid {
+        display: grid;
+        gap: 16px;
+        margin-top: 8px;
+      }
+
+      .pattern-card {
+        padding: 22px 24px;
+        border: 1px solid var(--soft);
+        border-radius: 18px;
+        background: linear-gradient(180deg, #fffdf9, #faf4ea);
+      }
+
+      .pattern-card p {
+        margin: 0 0 14px;
+        color: var(--ink);
+        font-size: 1.08rem;
+        font-weight: 600;
+        line-height: 1.55;
+      }
+
+      .pattern-source {
+        margin: -2px 0 14px;
+        color: rgba(154, 113, 61, 0.82);
+        font-size: 0.68rem;
+      }
+
+      .react-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .react-btn,
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        min-height: 36px;
+        padding: 0 14px;
+        border: 1px solid var(--soft);
+        border-radius: 999px;
+        background: #fff;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: border-color 0.12s, background 0.12s, color 0.12s;
+      }
+
+      .react-btn:hover,
+      .share-btn:hover {
+        border-color: var(--accent);
+        color: var(--ink);
+      }
+
+      .react-btn.is-active {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+        color: var(--ink);
+      }
+
+      .react-count {
+        font-variant-numeric: tabular-nums;
+        opacity: 0.75;
+      }
+
+      .trust-box {
+        padding: 24px;
+        border-radius: 18px;
+        border: 1px dashed rgba(139, 107, 61, 0.45);
+        background: rgba(239, 228, 210, 0.35);
+      }
+
+      .trust-box .question {
+        margin: 0 0 12px;
+        font-family: Georgia, serif;
+        font-size: 1.25rem;
+        color: var(--ink);
+      }
+
+      .wall-section {
+        overflow: hidden;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .wall-section .wall-header {
+        padding: 0 clamp(28px, 4.5vw, 56px) 20px;
+      }
+
+      .wall-track-wrap {
+        mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      }
+
+      .wall-track {
+        display: flex;
+        gap: 16px;
+        width: max-content;
+        animation: wall-scroll var(--wall-speed) linear infinite;
+      }
+
+      .wall-track.reverse {
+        animation-direction: reverse;
+        animation-duration: calc(var(--wall-speed) * 1.15);
+        margin-top: 14px;
+      }
+
+      .wall-track:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes wall-scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      .wall-card {
+        width: min(320px, 78vw);
+        flex-shrink: 0;
+        padding: 20px 22px;
+        border: 1px solid var(--soft);
+        border-radius: 18px;
+        background: var(--card);
+        box-shadow: 0 8px 28px rgba(24, 36, 45, 0.06);
+      }
+
+      .wall-card .tag {
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .wall-card q {
+        display: block;
+        margin: 0;
+        font-size: 1.02rem;
+        line-height: 1.55;
+        color: var(--ink);
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      .note-form {
+        display: grid;
+        gap: 16px;
+        margin-top: 12px;
+      }
+
+      .note-form label {
+        display: grid;
+        gap: 6px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .note-form textarea,
+      .note-form select {
+        width: 100%;
+        padding: 14px 16px;
+        border: 1px solid var(--soft);
+        border-radius: 14px;
+        font: inherit;
+        color: var(--ink);
+        background: #fffdf9;
+      }
+
+      .note-form textarea {
+        min-height: 88px;
+        resize: vertical;
+      }
+
+      .radio-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+      }
+
+      .radio-row label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+      }
+
+      .checkbox-row {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 0.88rem;
+        line-height: 1.5;
+      }
+
+      .checkbox-row input {
+        margin-top: 4px;
+      }
+
+      .form-msg {
+        margin: 0;
+        font-size: 0.9rem;
+        min-height: 1.4em;
+      }
+
+      .form-msg.ok {
+        color: #2d5a3d;
+      }
+
+      .form-msg.err {
+        color: #8b3a3a;
+      }
+
+      .no-homework {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .no-homework span {
+        padding: 14px 12px;
+        text-align: center;
+        border: 1px solid var(--soft);
+        border-radius: 14px;
+        background: #fffdf9;
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      .shape-list {
+        display: grid;
+        gap: 18px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .shape-list li {
+        padding: 20px 22px;
+        border-left: 4px solid var(--accent);
+        border-radius: 0 16px 16px 0;
+        background: rgba(255, 255, 255, 0.65);
+      }
+
+      .shape-list strong {
         display: block;
         margin-bottom: 6px;
         color: var(--ink);
       }
 
-      .path-item span {
+      .shape-list span {
         color: var(--muted);
-        font-size: 0.9rem;
-        line-height: 1.55;
+        font-size: 0.98rem;
       }
 
       .plain-list {
         display: grid;
-        gap: 18px;
-        padding: 0;
+        gap: 12px;
         margin: 0;
+        padding: 0;
         list-style: none;
       }
 
       .plain-list li {
-        padding-left: 28px;
+        padding-left: 22px;
         position: relative;
         color: var(--muted);
-        font-size: 1.08rem;
-        line-height: 1.75;
       }
 
       .plain-list li::before {
         content: "";
         position: absolute;
         left: 0;
-        top: 0.72em;
-        width: 10px;
-        height: 10px;
+        top: 0.65em;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         background: var(--accent);
-        opacity: 0.82;
-      }
-
-      .steps {
-        display: grid;
-        gap: 20px;
-        margin-top: 26px;
-      }
-
-      .step {
-        padding: 24px;
-        border: 1px solid var(--soft);
-        border-radius: 20px;
-        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
-      }
-
-      .step strong {
-        display: block;
-        margin-bottom: 8px;
       }
 
       details {
-        margin-top: 26px;
+        margin-top: 20px;
         border: 1px solid var(--soft);
-        border-radius: 20px;
-        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
+        border-radius: 18px;
+        background: #fffdf9;
         overflow: hidden;
-      }
-
-      .covenant-details {
-        max-width: none;
       }
 
       summary {
         cursor: pointer;
-        padding: 22px 26px;
-        border-bottom: 1px solid rgba(226, 216, 200, 0.72);
+        padding: 18px 22px;
         font-weight: 700;
       }
 
       .details-body {
-        padding: 28px 26px 32px;
+        padding: 0 22px 24px;
         color: var(--muted);
-      }
-
-      .details-body p,
-      .details-body li {
-        max-width: none;
-        line-height: 1.82;
-      }
-
-      .details-body ul {
-        display: grid;
-        gap: 12px;
-        margin: 4px 0 22px;
-        padding-left: 1.2rem;
-      }
-
-      .faq {
-        display: grid;
-        gap: 28px;
-      }
-
-      .footer {
-        padding: 34px 0 0;
-        color: var(--muted);
-        font-size: 0.94rem;
-        text-align: center;
-      }
-
-      .placeholder-note {
-        margin: 0;
-        color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.55;
+        font-size: 0.98rem;
+        line-height: 1.75;
       }
 
       .apply-card {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
-        gap: clamp(24px, 5vw, 56px);
+        gap: 28px;
         align-items: center;
       }
 
-      .apply-copy p {
-        max-width: none;
-      }
-
-      .apply-actions {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        align-items: flex-start;
-        min-width: min(100%, 280px);
-      }
-
-      .callout-section {
-        border: 1px solid rgba(139, 107, 61, 0.28);
-        background:
-          linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(239, 228, 210, 0.92)),
-          linear-gradient(180deg, #fffdf9, #fbf4e9);
-      }
-
-      .callout-section h2 {
-        max-width: 18ch;
-      }
-
-      .quote-lines {
-        display: grid;
-        gap: 14px;
-        margin: 28px 0 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .quote-lines li {
-        padding: 18px 20px;
-        border-left: 4px solid var(--accent);
-        border-radius: 0 16px 16px 0;
-        background: rgba(255, 255, 255, 0.72);
-        color: var(--ink);
-        font-size: 1.12rem;
-        line-height: 1.62;
-        font-weight: 600;
-      }
-
-      .chip-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: 24px;
-      }
-
-      .chip-list span {
-        display: inline-flex;
-        align-items: center;
-        padding: 8px 14px;
-        border: 1px solid var(--soft);
-        border-radius: 999px;
-        background: #fffdf9;
+      .footer {
+        margin-top: 40px;
+        text-align: center;
         color: var(--muted);
-        font-size: 0.88rem;
-        line-height: 1.4;
+        font-size: 0.9rem;
       }
 
-      .anti-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-        margin-top: 24px;
-      }
-
-      .anti-card {
-        padding: 22px;
-        border: 1px solid var(--soft);
-        border-radius: 18px;
-        background: linear-gradient(180deg, #fffdf9, #fbf4e9);
-      }
-
-      .anti-card strong {
-        display: block;
-        margin-bottom: 8px;
-        color: var(--ink);
-      }
-
-      .anti-card p {
-        margin: 0;
-        font-size: 0.98rem;
-        line-height: 1.7;
-      }
-
-      @media (max-width: 980px) {
-        .grid {
-          grid-template-columns: 1fr;
-        }
-
-        .path-list {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
       }
 
       @media (max-width: 760px) {
-        .page {
-          width: min(100% - 24px, 1120px);
-          padding-top: 24px;
+        .hero-card {
+          background:
+            radial-gradient(circle at 8% 0%, rgba(240, 211, 155, 0.18), transparent 24rem),
+            linear-gradient(135deg, rgba(19, 36, 49, 0.99) 0%, rgba(23, 50, 67, 0.97) 100%);
         }
 
-        .hero {
-          min-height: auto;
-          padding: 30px 0 6px;
+        .hero-layout,
+        .source-grid {
+          grid-template-columns: 1fr;
         }
 
-        .hero-card::before {
-          width: 108px;
-          height: 108px;
-          opacity: 0.07;
+        .cred-grid {
+          grid-template-columns: 1fr;
         }
 
-        .actions {
-          align-items: stretch;
-          flex-direction: column;
+        .no-homework {
+          grid-template-columns: repeat(2, 1fr);
         }
 
         .apply-card {
           grid-template-columns: 1fr;
-          align-items: stretch;
         }
 
-        .path-list {
-          grid-template-columns: 1fr;
-        }
-
-        .anti-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .apply-actions {
-          min-width: 0;
-        }
-
-        .button,
-        .secondary-link {
+        .actions .button {
           width: 100%;
-          text-align: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .wall-track {
+          animation: none;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
+        .wall-track-wrap {
+          mask-image: none;
         }
       }
     </style>
   </head>
   <body>
-    <main class="page">
-      <section class="hero" id="top">
-        <div class="hero-card">
-          <div class="cross-emblem" aria-hidden="true"></div>
-          <p class="eyebrow">Grace Access Path · Free Pastor Receiving</p>
-          <h1>Free Pastor Receiving is now open.</h1>
-          <p class="hero-bridge">
-            If support has become another place to perform, this path is not another program to
-            run.
+    <header class="site-nav">
+      <div class="site-nav-inner">
+        <a class="brand" href="#top">Pastor Listening Notes</a>
+        <nav class="site-nav-links" aria-label="Page sections">
+          <a href="#sources">Sources</a>
+          <a href="#listening">Patterns</a>
+          <a href="#wall">Wall</a>
+          <a href="#participate">Add a note</a>
+          <a href="#covenant">Covenant</a>
+          <a href="#apply">Apply</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page" id="top">
+      <section class="hero-card" aria-labelledby="hero-title">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Grace Access Path · Pastor Listening Notes</p>
+            <h1 id="hero-title">Pastors need a place to receive before serving again.</h1>
+            <p class="hero-bridge">
+              If support has become another place to perform, this path is not another program to run.
+            </p>
+            <p class="lead">
+              A public listening brief on pastoral burden, private care, and what makes an online
+              Christian receiving path trustworthy enough to test carefully.
+            </p>
+            <p class="micro-trust">
+              You are welcome to read these notes without applying. Nothing here requires an account,
+              a discussion thread, or public testimony.
+            </p>
+            <div class="actions">
+              <a class="button button-ghost" href="#sources">Review the source basis</a>
+              <a class="button button-ghost" href="#covenant">Read the covenant</a>
+              <a class="button" href="#apply">Apply for Free Pastor Receiving</a>
+            </div>
+          </div>
+
+          <aside class="hero-panel" aria-label="Research basis summary">
+            <p class="eyebrow">Listening brief · updated May 30, 2026</p>
+            <h2>Built from public pastor language, then reviewed with boundaries.</h2>
+            <p>
+              The notes below are not clinical claims, survey statistics, or testimonials. They are
+              recurring patterns synthesized from public ministry discussions and manually reviewed
+              anonymous notes.
+            </p>
+            <div class="cred-grid">
+              <div class="cred-item">
+                <strong>4</strong>
+                <span>public discussion sources</span>
+              </div>
+              <div class="cred-item">
+                <strong>3</strong>
+                <span>trust checks</span>
+              </div>
+              <div class="cred-item">
+                <strong>0</strong>
+                <span>public testimony required</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section-card" id="sources" aria-labelledby="sources-title">
+        <p class="eyebrow">Source Basis</p>
+        <h2 id="sources-title">Where these patterns come from</h2>
+        <p style="margin: 0; color: var(--muted); max-width: 70ch">
+          This page uses a listening-method standard: name the source type, avoid identifying
+          individual people, and separate observed language from claims about outcomes.
+        </p>
+        <div class="source-grid">
+          <article class="source-card">
+            <span class="source-label">Public discussion scan</span>
+            <p>
+              Recurring language from pastor and Christian-care discussions, including public
+              Reddit spaces such as r/pastors, r/Christianity, r/Christian, and r/AskAPriest.
+            </p>
+          </article>
+          <article class="source-card">
+            <span class="source-label">Internal language map</span>
+            <p>
+              Patterns are organized in a private working file by theme: burnout, boundaries,
+              spiritual direction, privacy, online trust, and support that becomes another task.
+            </p>
+          </article>
+          <article class="source-card">
+            <span class="source-label">Manual review</span>
+            <p>
+              Notes are shortened, anonymized, and checked before publication. We do not publish
+              names, churches, medical details, crisis content, or private messages.
+            </p>
+          </article>
+        </div>
+        <div class="evidence-strip" aria-label="Method limitations">
+          <span>Not a representative survey</span>
+          <span>Not medical research</span>
+          <span>Not outcome proof</span>
+          <span>Composite summaries allowed</span>
+          <span>Reviewed before publication</span>
+        </div>
+      </section>
+
+      <section class="section-card" id="listening" aria-labelledby="listening-title">
+        <p class="eyebrow">Observed Patterns</p>
+        <h2 id="listening-title">What we are hearing</h2>
+        <p style="margin: 0 0 8px; color: var(--muted); max-width: 58ch">
+          Short, source-labeled patterns from public pastor language and clergy-care conversations.
+          Tap what feels true — no account needed.
+        </p>
+        <div class="pattern-grid" id="pattern-grid"></div>
+      </section>
+
+      <section class="section-card" id="trust-question">
+        <p class="eyebrow">Trust Audit</p>
+        <h2>This week&rsquo;s trust question</h2>
+        <div class="trust-box">
+          <p class="question" id="trust-question-text">
+            What would make a free, private pastor receiving path feel immediately untrustworthy?
           </p>
-          <p class="lead">
-            The first open doorway of Grace Access Path: a free, private Christian receiving space
-            for pastors, chaplains, and ministry workers who need to receive before serving again.
+          <p style="margin: 0; color: var(--muted); font-size: 0.95rem">
+            We study answers anonymously. They shape the covenant and how Free Pastor Receiving
+            stays bounded.
           </p>
-          <p class="trust-line">
-            Ordinary pastors should not only carry grace for others. They should have a way to
-            receive, reflect, and discern with care.
+        </div>
+      </section>
+
+      <section class="section-card wall-section" id="wall" aria-labelledby="wall-title">
+        <div class="wall-header">
+          <p class="eyebrow">Reviewed Wall</p>
+          <h2 id="wall-title">Reviewed listening wall</h2>
+          <p style="margin: 0; color: var(--muted); max-width: 58ch">
+            Composite and anonymous notes, reviewed before publication. Not a live forum — no
+            replies, no profiles, no homework.
           </p>
-          <p class="boundary-line">
-            This is not advice, counseling, or another leadership resource. It is a short receiving
-            space: pause, receive quietly, and honestly notice what changes in burden, rest, ministry
-            strain, and carrying capacity.
-          </p>
-          <p class="boundary-line">
-            Free. Voluntary. Private. Not medical care or psychotherapy. No public testimony
-            required.
-          </p>
-          <div class="actions">
-            <a
-              class="button"
-              href="https://docs.google.com/forms/d/e/1FAIpQLScFm62e8bOkm_49uy7dhDMSrX0hCjFjOFnOi5Y1IIkW8VdoHQ/viewform"
-              target="_blank"
-              rel="noopener"
+        </div>
+        <div class="wall-track-wrap" aria-hidden="false">
+          <div class="wall-track" id="wall-track-a"></div>
+          <div class="wall-track reverse" id="wall-track-b"></div>
+        </div>
+      </section>
+
+      <section class="section-card" id="participate">
+        <p class="eyebrow">Careful Participation</p>
+        <h2>Add one anonymous sentence</h2>
+        <p style="margin: 0; color: var(--muted); max-width: 58ch">
+          One sentence only. Please do not include names, churches, medical details, or crisis
+          information. This is not a crisis support channel.
+        </p>
+        <form class="note-form" id="note-form">
+          <label>
+            Your sentence
+            <textarea
+              id="note-text"
+              name="note"
+              maxlength="280"
+              required
+              placeholder="In one sentence: what makes pastor support feel safe or unsafe?"
+            ></textarea>
+          </label>
+          <div class="radio-row" role="radiogroup" aria-label="Visibility">
+            <label
+              ><input type="radio" name="visibility" value="private" checked /> Keep private for
+              research only</label
             >
-              Apply privately
-            </a>
-            <a class="secondary-link" href="#covenant">Read the covenant first</a>
+            <label
+              ><input type="radio" name="visibility" value="publish" /> Allow anonymous publication
+              after review</label
+            >
           </div>
+          <label class="checkbox-row">
+            <input type="checkbox" id="note-agree" required />
+            <span>I understand this is not medical care, psychotherapy, or crisis support.</span>
+          </label>
+          <div>
+            <button type="submit" class="button">Submit note</button>
+          </div>
+          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+        <h3 style="margin-top: 36px">No homework here</h3>
+        <div class="no-homework" aria-label="Participation boundaries">
+          <span>No account</span>
+          <span>No public profile</span>
+          <span>No discussion thread</span>
+          <span>No homework</span>
         </div>
       </section>
 
-      <section class="section-card callout-section" id="relevance">
-        <h2>This is not another program to run.</h2>
-        <p>
-          For some pastors, the problem is not only that ministry is tiring. It is that care,
-          prayer, Scripture, and spiritual life have started to feel like output instead of
-          nourishment.
+      <section class="section-card" id="shapes-fpr">
+        <p class="eyebrow">From Listening To Design</p>
+        <h2>How these notes shape Free Pastor Receiving</h2>
+        <p style="margin: 0 0 22px; color: var(--muted); max-width: 68ch">
+          The point of listening is not to prove that the path works. It is to make the invitation
+          smaller, safer, and easier to critique before anyone applies.
         </p>
-        <ul class="quote-lines" aria-label="Common pastor language">
-          <li>Spiritual disciplines stopped feeling nourishing.</li>
-          <li>The Bible became sermon prep.</li>
-          <li>Prayer started to feel like performance.</li>
-          <li>Care became something they give, but rarely receive.</li>
+        <ul class="shape-list">
+          <li>
+            <strong>What we heard:</strong>
+            <span>Support often becomes another program to attend or lead.</span>
+            <br /><br />
+            <strong>How this shapes the path:</strong>
+            <span>No group to lead. No public testimony. No follow-up obligation beyond optional reflection.</span>
+          </li>
+          <li>
+            <strong>What we heard:</strong>
+            <span>Private matters before public sharing.</span>
+            <br /><br />
+            <strong>How this shapes the path:</strong>
+            <span>The first receiving experience stays private and feedback-led.</span>
+          </li>
+          <li>
+            <strong>What we heard:</strong>
+            <span>Trust breaks when care feels like a funnel, scam, or therapy replacement.</span>
+            <br /><br />
+            <strong>How this shapes the path:</strong>
+            <span>Read the covenant first. Apply only if it still feels appropriate.</span>
+          </li>
         </ul>
-        <p>
-          Free Pastor Receiving is a short <strong>online Christian receiving space</strong>:
-          pause, receive quietly, and honestly notice whether burden, rest, ministry strain, or
-          carrying capacity shifts.
-        </p>
-        <p>
-          This is not advice, counseling, another leadership resource, or a public ministry role.
-          It is a private first step on Grace Access Path.
-        </p>
-        <div class="chip-list" aria-label="What this is not">
-          <span>Not medical care</span>
-          <span>Not psychotherapy</span>
-          <span>Not a paid outcome</span>
-          <span>Not public testimony</span>
-        </div>
       </section>
 
-      <section class="section-card callout-section" id="anti-extractive">
-        <h2>Life-giving, not extractive.</h2>
-        <p>
-          Many pastors are already under-supported. They do not need another required support space
-          that becomes one more place to perform.
+      <section class="section-card" id="receiving">
+        <p class="eyebrow">Private Pilot</p>
+        <h2>Free Pastor Receiving</h2>
+        <p style="margin: 0 0 16px; color: var(--muted); max-width: 58ch">
+          A small, private Christian receiving experience for pastors, chaplains, and ministry
+          workers: pause, receive quietly, and honestly notice burden, rest, ministry strain, and
+          carrying capacity. Early feedback is for discernment and design, not public proof.
         </p>
-        <p>
-          For some pastors, real help begins with time off, privacy, and room to reflect. A support
-          group, retreat, or ministry initiative can sound helpful and still add weight if it asks
-          the pastor to explain, organize, attend, lead, or manage one more thing.
-        </p>
-        <div class="anti-grid">
-          <div class="anti-card">
-            <strong>Private before public</strong>
-            <p>
-              Public support is rarely the safest first step. This path begins privately, without
-              asking for a story, a testimony, or a visible role.
-            </p>
-          </div>
-          <div class="anti-card">
-            <strong>Not another obligation</strong>
-            <p>
-              If support feels like another meeting, another assignment, or another place to be
-              judged, it has already missed the point.
-            </p>
-          </div>
-          <div class="anti-card">
-            <strong>Not content, hosting, or performance</strong>
-            <p>
-              Pastors are not being asked to teach, host, explain, promote, or become content
-              suppliers for a platform.
-            </p>
-          </div>
-          <div class="anti-card">
-            <strong>Receive, notice, discern</strong>
-            <p>
-              The point is not spectacle. It is quiet receiving, honest reflection, and careful
-              discernment about whether this is genuinely helpful.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section-card" id="movement">
-        <h2>Why this doorway exists</h2>
-        <p>
-          Grace should not remain concentrated around famous stages, conferences, or high-pressure
-          ministry moments. Grace Access Path begins with a simpler claim: ordinary pastors need a
-          real place to receive before they keep serving.
-        </p>
-        <p>
-          Free Pastor Receiving is the first public access point. It is intentionally small at the
-          point of care, but broad in invitation: pastors may apply privately, receive quietly, and
-          help us discern how Christian receiving can become more accessible without becoming
-          commercial, theatrical, or coercive.
-        </p>
-        <div class="path-list" aria-label="Grace Access Path">
-          <div class="path-item">
-            <strong>Access</strong>
-            <span>A low-barrier way for ordinary pastors to approach a receiving space.</span>
-          </div>
-          <div class="path-item">
-            <strong>Receiving</strong>
-            <span>A short, private Christian space to stop performing and receive quietly.</span>
-          </div>
-          <div class="path-item">
-            <strong>Feedback</strong>
-            <span>Brief before/after reflection on burden, rest, strain, and carrying capacity.</span>
-          </div>
-          <div class="path-item">
-            <strong>Discernment</strong>
-            <span>Careful review before any deeper support or long-term partnership is considered.</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid" aria-label="Introduction">
-        <div class="section-card">
-          <h2>Who this is for</h2>
-          <p>
-            This path is for pastors, chaplains, ministry workers, and others in Christian pastoral
-            care who believe pastors should not only lead, teach, counsel, and carry, but also have
-            access to receive.
-          </p>
-          <p class="definition-note">
-            By "spiritual burden," we mean the quiet weight you may carry in ministry, prayer,
-            pastoral care, or personal spiritual life. For many, it may feel like persistent
-            heaviness, emotional exhaustion, trouble resting, a sense of being constantly on alert,
-            sudden waves of fear, numbness, or memories and pressures that keep returning after
-            caring for others. This is not a medical or psychological diagnosis.
-          </p>
-          <p>You do not need to perform spiritually here. You do not need to manufacture a dramatic story.</p>
-        </div>
-
-        <div class="section-card">
-          <h2>What this is</h2>
-          <p>
-            This is the first open step of Grace Access Path, not a full public program, membership
-            system, or mass support service.
-          </p>
-          <p>
-            If invited, you may watch or listen to a brief Christian receiving video, remain quiet
-            for a few minutes, and then note - simply and honestly - how your sense of spiritual
-            burden, inner rest, ministry strain, and carrying capacity feels.
-          </p>
-          <p>
-            Some may notice rest, release, clarity, a lighter burden, or a shift in prayerful
-            attention. Some may notice little or nothing at first. Either response is welcome.
-          </p>
-        </div>
-      </section>
-
-      <section class="section-card" id="what-not">
-        <h2>What we do not claim</h2>
         <ul class="plain-list">
-          <li>Not medical treatment or psychotherapy.</li>
-          <li>Not a replacement for your church, doctor, counselor, or other appropriate care.</li>
-          <li>Not a paid program or a request for public testimony.</li>
-          <li>Not a guarantee of healing, visions, signs, or any specific result.</li>
-          <li>Not a promise of deeper support, special status, or a public ministry role.</li>
+          <li>Not medical care or psychotherapy.</li>
+          <li>Not a replacement for church, counseling, supervision, or emergency support.</li>
+          <li>Not a public testimony request or another program to run.</li>
+          <li>Voluntary. You can stop at any time.</li>
         </ul>
-      </section>
-
-      <section class="section-card" id="how">
-        <h2>How it works</h2>
-        <div class="steps">
-          <div class="step">
-            <strong>1. Apply privately</strong>
-            <p>Tell us a little about your role and whether this feels relevant. You may use a name or an alias.</p>
-          </div>
-          <div class="step">
-            <strong>2. Manual review</strong>
-            <p>We read each application carefully. Not everyone will be invited, and that is okay.</p>
-          </div>
-          <div class="step">
-            <strong>3. If invited</strong>
-            <p>
-              You will receive the next steps by email or message: a short reflection before receiving,
-              the receiving experience itself, and simple follow-up afterward.
-            </p>
-          </div>
-          <div class="step">
-            <strong>4. Feedback and discernment</strong>
-            <p>
-              Your feedback helps us understand whether this first doorway is clear, safe,
-              pastor-honoring, and genuinely helpful. Any deeper support or long-term partnership is
-              considered only slowly, privately, and by manual review.
-            </p>
-          </div>
-        </div>
       </section>
 
       <section class="section-card" id="covenant">
+        <p class="eyebrow">Boundary Before Application</p>
         <h2>Covenant</h2>
-        <p>Please read this before applying. Participation is voluntary, private, and discernment-led.</p>
-        <details class="covenant-details">
-          <summary>Full covenant</summary>
+        <p style="margin: 0; color: var(--muted)">
+          Please read before applying. Participation is voluntary, private, and discernment-led.
+        </p>
+        <details>
+          <summary>Read full covenant</summary>
           <div class="details-body">
             <p>
-              Free Pastor Receiving is a private Christian receiving experience for pastors,
-              chaplains, and ministry workers who have carried others for a long time and want to
-              enter the first open doorway of Grace Access Path.
-            </p>
-            <p>It is free. It is voluntary. It does not require a public testimony.</p>
-            <p>
-              This is not simply a teaching, article, coaching session, or wellness tip. The
-              invitation is to stop performing for a few minutes, enter a cross-centered receiving
-              space, and notice honestly what changes, if anything.
-            </p>
-            <p>This is a cross-centered Christian receiving experience built around quietness, prayerful openness, and careful reflection.</p>
-            <p>
-              You may be invited to watch or listen to a short Christian receiving video, remain still
-              for a few minutes, and then complete a brief before/after reflection about spiritual
-              burden, inner rest, ministry strain, and carrying capacity.
+              Free Pastor Receiving is a private Christian receiving experience for pastors who
+              have carried others for a long time. It is free, voluntary, and does not require
+              public testimony.
             </p>
             <p>
-              Some people may notice rest, release, clarity, a lighter burden, a shift in prayerful
-              attention, or a greater sense of being able to keep carrying others. Some may notice
-              little or nothing at first. Either response is welcome. We do not force an outcome; we
-              make space, observe honestly, and follow the fruit.
+              This is not medical treatment or psychotherapy. It is not a replacement for your
+              church, doctor, counselor, or other appropriate care. It is not a guarantee of healing,
+              visions, or any specific result.
             </p>
-            <p>You are free to stop at any time.</p>
-            <p>Because this is a real spiritual receiving space, we keep it bounded.</p>
+            <p>You may stop at any time. If distress increases, stop and seek appropriate support.</p>
             <p>
-              This is not medical treatment or psychotherapy. This is not a replacement for your
-              church, pastor, doctor, counselor, or other appropriate care.
-            </p>
-            <p>
-              This is not a request for public testimony. This is not a paid program. This is not a
-              guarantee of healing, visions, signs, or any specific result.
-            </p>
-            <p>Before you begin, please keep these boundaries in mind:</p>
-            <ul>
-              <li>You are choosing to participate voluntarily.</li>
-              <li>You may stop at any time, for any reason.</li>
-              <li>You will not be pressured to share your name, church, or public testimony.</li>
-              <li>You will not treat this as medical or psychological care.</li>
-              <li>
-                If fear, confusion, distress, compulsion, or a sense of losing touch with reality
-                increases, you will stop and seek appropriate support.
-              </li>
-              <li>
-                If you are currently under medical, psychiatric, counseling, or pastoral care, you
-                will not stop that care because of this experience.
-              </li>
-              <li>
-                You are encouraged to discern the experience according to Scripture, conscience, your
-                church tradition, and appropriate pastoral counsel.
-              </li>
-              <li>
-                Your feedback will be reviewed privately to help us keep the process clear, honest,
-                pastor-honoring, and safe. Any public use of feedback must be anonymized and
-                separately approved.
-              </li>
-            </ul>
-            <p>You may use your real name or an anonymous participant name.</p>
-            <p>
-              We will not publicly share your name, church, location, health condition, or private
-              feedback without your explicit permission.
-            </p>
-            <p>
-              Early feedback is used mainly to understand whether pastors can genuinely receive,
-              whether burden, rest, strain, or carrying capacity shift in any noticeable way, and
-              whether this first access path remains clear, voluntary, discerning, and
-              pastor-honoring.
+              Feedback is reviewed privately. Any public use of feedback must be anonymized and
+              separately approved.
             </p>
           </div>
         </details>
       </section>
 
-      <section class="section-card apply-card" id="apply-placeholder">
-        <div class="apply-copy">
-          <h2>Apply</h2>
-          <p>The form takes a few minutes. Please do not include sensitive medical details.</p>
-          <p>
-            Before applying, ask honestly: would a private receiving space feel relieving right now,
-            or would it feel like another obligation?
-          </p>
-          <p>
-            By applying, you confirm you have read the covenant and understand this is voluntary and
-            non-medical.
+      <section class="section-card apply-card" id="apply">
+        <div>
+          <h2>Apply privately</h2>
+          <p style="margin: 0; color: var(--muted)">
+            Manual review. Not everyone will be invited — and that is okay. Applying does not place
+            you in a public campaign or promised deeper support.
           </p>
         </div>
-        <div class="apply-actions">
+        <div class="actions" style="margin-top: 0; flex-direction: column; align-items: stretch">
           <a
             class="button"
             href="https://docs.google.com/forms/d/e/1FAIpQLScFm62e8bOkm_49uy7dhDMSrX0hCjFjOFnOi5Y1IIkW8VdoHQ/viewform"
             target="_blank"
             rel="noopener"
+            >Open application form</a
           >
-            Open application form
-          </a>
-          <p class="placeholder-note">The form opens in a new tab.</p>
-        </div>
-      </section>
-
-      <section class="section-card">
-        <h2>After you apply</h2>
-        <p>
-          We will not auto-enroll you. If this receiving path seems like a good fit, we will contact
-          you with the next steps. If not, you may simply hear nothing further - no pressure to
-          follow up.
-        </p>
-        <p>
-          Applying does not place you into a public campaign, a membership track, or a promised
-          deeper support path. It simply opens the possibility of one private receiving experience
-          and honest feedback.
-        </p>
-        <p>Please continue any medical, counseling, pastoral, or other care you already receive.</p>
-      </section>
-
-      <section class="section-card" id="faq">
-        <h2>FAQ</h2>
-        <div class="faq">
-          <div>
-            <h3>Do I have to share my church name or appear publicly?</h3>
-            <p>No. You may use an alias. We do not ask for public testimony.</p>
-          </div>
-          <div>
-            <h3>Is this therapy or treatment for depression or anxiety?</h3>
-            <p>
-              No. This is not medical or psychological treatment. If you have clinical concerns,
-              please continue appropriate professional care.
-            </p>
-          </div>
-          <div>
-            <h3>What if I feel worse or uncomfortable during the experience?</h3>
-            <p>
-              Stop. You may end at any time. If fear, confusion, or distress increases, do not push
-              through. Seek appropriate support.
-            </p>
-          </div>
-          <div>
-            <h3>Is this asking pastors to teach, host, or produce content?</h3>
-            <p>
-              No. This is not a marketplace for pastors to perform wisdom publicly. It is a private
-              receiving path first.
-            </p>
-          </div>
-          <div>
-            <h3>What if support groups or retreats have felt like another obligation?</h3>
-            <p>
-              That is one reason this path is private and small. It is not a required group, a public
-              accountability space, or another place to perform. If it would feel like added weight,
-              you are free not to apply.
-            </p>
-          </div>
-          <div>
-            <h3>What if ordinary rest, therapy, or sabbatical has not been enough?</h3>
-            <p>
-              Some pastors still need a distinct place to stop performing and receive quietly. This
-              path is for those who want to notice whether burden, rest, strain, or carrying capacity
-              shifts in a short private receiving space.
-            </p>
-          </div>
+          <a class="secondary-link" href="#covenant">Read covenant again</a>
         </div>
       </section>
 
       <footer class="footer">
-        <p>Grace Access Movement - Grace Access Path begins with Free Pastor Receiving.</p>
-        <p>Questions: <a href="mailto:graceaccesspath@gmail.com">graceaccesspath@gmail.com</a></p>
-        <p>This page does not offer medical advice.</p>
+        <p>Grace Access Path · Pastor Listening Notes</p>
+        <p>
+          Questions:
+          <a href="mailto:graceaccesspath@gmail.com">graceaccesspath@gmail.com</a>
+        </p>
+        <p>This page does not offer medical advice or crisis intervention.</p>
       </footer>
     </main>
+
+    <script>
+      (function () {
+        const APPLY_URL =
+          "https://docs.google.com/forms/d/e/1FAIpQLScFm62e8bOkm_49uy7dhDMSrX0hCjFjOFnOi5Y1IIkW8VdoHQ/viewform";
+
+        const STORAGE = {
+          reactions: "pln_reactions_v1",
+          pending: "pln_pending_notes_v1",
+        };
+
+        const PATTERNS = [
+          {
+            id: "p1",
+            text: "Support can become another program to attend, lead, or perform in.",
+            share: "Support can become another program — Pastor Listening Notes",
+            source: "Source basis: public pastor discussions on burnout, retreats, groups, and support obligations.",
+          },
+          {
+            id: "p2",
+            text: "Private matters before public testimony.",
+            share: "Private before public — Pastor Listening Notes",
+            source: "Source basis: public comments about confidentiality, public groups, testimony pressure, and professional trust.",
+          },
+          {
+            id: "p3",
+            text: "Pastors need to receive without explaining, organizing, or hosting.",
+            share: "Receive without hosting — Pastor Listening Notes",
+            source: "Source basis: recurring language about spiritual direction, daily office, sermon prep, and always-leading fatigue.",
+          },
+          {
+            id: "p4",
+            text: "Trust breaks when care feels like a funnel, scam, or therapy replacement.",
+            share: "Trust and boundaries — Pastor Listening Notes",
+            source: "Source basis: trust-barrier mapping from public responses to online ministry, ads, and clergy-care offers.",
+          },
+          {
+            id: "p5",
+            text: "Online Christian support must stay voluntary, bounded, and carefully discerned.",
+            share: "Voluntary bounded support — Pastor Listening Notes",
+            source: "Source basis: public cautions about online Q&A, local relationships, volunteer capacity, and discernment.",
+          },
+        ];
+
+        const REACT_TYPES = [
+          { key: "true", label: "This feels true" },
+          { key: "seen", label: "I've seen this" },
+          { key: "nuance", label: "Needs nuance" },
+        ];
+
+        const SEED_WALL = [
+          { id: "w1", tag: "not another program", text: "I left with homework, not rest." },
+          { id: "w2", tag: "private", text: "I needed privacy before I could be honest." },
+          { id: "w3", tag: "trust", text: "If it asks for testimony, I'm out." },
+          { id: "w4", tag: "burden", text: "I pray for everyone. I rarely have a place to receive." },
+          { id: "w5", tag: "performance", text: "Scripture became sermon prep, not bread." },
+          { id: "w6", tag: "sustainable", text: "Part-time call, full-time burden." },
+        ];
+
+        function loadJson(key, fallback) {
+          try {
+            const raw = localStorage.getItem(key);
+            return raw ? JSON.parse(raw) : fallback;
+          } catch {
+            return fallback;
+          }
+        }
+
+        function saveJson(key, value) {
+          try {
+            localStorage.setItem(key, JSON.stringify(value));
+          } catch {
+            /* ignore quota */
+          }
+        }
+
+        function getReactions() {
+          return loadJson(STORAGE.reactions, {});
+        }
+
+        function setReaction(id, type) {
+          const all = getReactions();
+          if (!all[id]) all[id] = {};
+          const cur = all[id][type] || 0;
+          all[id][type] = cur + 1;
+          saveJson(STORAGE.reactions, all);
+          return all[id];
+        }
+
+        function copyShare(text) {
+          const line = text + "\nhttps://grace-pastor-receiving.vercel.app";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(line);
+          }
+          return Promise.reject();
+        }
+
+        function renderPatterns() {
+          const root = document.getElementById("pattern-grid");
+          const reactions = getReactions();
+          root.innerHTML = "";
+          PATTERNS.forEach((p) => {
+            const card = document.createElement("article");
+            card.className = "pattern-card";
+            card.innerHTML = '<p></p><span class="pattern-source"></span><div class="react-row"></div>';
+            card.querySelector("p").textContent = p.text;
+            card.querySelector(".pattern-source").textContent = p.source;
+
+            const row = card.querySelector(".react-row");
+            REACT_TYPES.forEach((rt) => {
+              const btn = document.createElement("button");
+              btn.type = "button";
+              btn.className = "react-btn";
+              const count = (reactions[p.id] && reactions[p.id][rt.key]) || 0;
+              btn.innerHTML =
+                rt.label + ' <span class="react-count">' + (count ? count : "") + "</span>";
+              btn.addEventListener("click", () => {
+                const updated = setReaction(p.id, rt.key);
+                btn.querySelector(".react-count").textContent = updated[rt.key] || "";
+                btn.classList.add("is-active");
+                setTimeout(() => btn.classList.remove("is-active"), 400);
+              });
+              row.appendChild(btn);
+            });
+
+            const share = document.createElement("button");
+            share.type = "button";
+            share.className = "share-btn";
+            share.textContent = "Share pattern";
+            share.addEventListener("click", () => {
+              copyShare(p.share).catch(() => window.prompt("Copy this:", p.share));
+            });
+            row.appendChild(share);
+
+            root.appendChild(card);
+          });
+        }
+
+        function buildWallCard(note) {
+          const el = document.createElement("article");
+          el.className = "wall-card";
+          el.dataset.wallId = note.id;
+          el.innerHTML =
+            '<span class="tag"></span><q></q><div class="react-row" style="margin-top:12px"></div>';
+          el.querySelector(".tag").textContent = note.tag || "listening";
+          el.querySelector("q").textContent = note.text;
+
+          const row = el.querySelector(".react-row");
+          REACT_TYPES.forEach((rt) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "react-btn";
+            btn.textContent = rt.label;
+            btn.addEventListener("click", () => {
+              setReaction("wall-" + note.id, rt.key);
+              btn.classList.add("is-active");
+            });
+            row.appendChild(btn);
+          });
+          const share = document.createElement("button");
+          share.type = "button";
+          share.className = "share-btn";
+          share.textContent = "Share";
+          share.addEventListener("click", () => {
+            const t = '"' + note.text + '" — Pastor Listening Notes';
+            copyShare(t).catch(() => window.prompt("Copy:", t));
+          });
+          row.appendChild(share);
+          return el;
+        }
+
+        function renderWall() {
+          const pending = loadJson(STORAGE.pending, []).filter((n) => n.visibility === "publish");
+          const notes = SEED_WALL.concat(
+            pending.map((n, i) => ({
+              id: "u" + i,
+              tag: "submitted",
+              text: n.text,
+            }))
+          );
+
+          ["wall-track-a", "wall-track-b"].forEach((trackId) => {
+            const track = document.getElementById(trackId);
+            track.innerHTML = "";
+            const doubled = notes.concat(notes);
+            doubled.forEach((n) => track.appendChild(buildWallCard(n)));
+          });
+        }
+
+        const BLOCKED =
+          /\b(suicid|kill myself|988|emergency|diagnos|medication|prescri|hospital|psychiatr)\b/i;
+
+        document.getElementById("note-form").addEventListener("submit", (e) => {
+          e.preventDefault();
+          const msg = document.getElementById("form-msg");
+          const text = document.getElementById("note-text").value.trim();
+          const visibility =
+            document.querySelector('input[name="visibility"]:checked')?.value || "private";
+
+          if (!text) {
+            msg.textContent = "Please add one sentence.";
+            msg.className = "form-msg err";
+            return;
+          }
+          if (text.length > 280) {
+            msg.textContent = "Please keep it to one sentence.";
+            msg.className = "form-msg err";
+            return;
+          }
+          if (BLOCKED.test(text)) {
+            msg.textContent =
+              "Please do not include medical or crisis details here. Contact local emergency or crisis support if needed.";
+            msg.className = "form-msg err";
+            return;
+          }
+
+          const pending = loadJson(STORAGE.pending, []);
+          pending.push({ text, visibility, at: Date.now() });
+          saveJson(STORAGE.pending, pending);
+
+          msg.textContent =
+            visibility === "publish"
+              ? "Thank you. Your note is held for review before any anonymous publication."
+              : "Thank you. Your note was received for research only.";
+          msg.className = "form-msg ok";
+          e.target.reset();
+          document.querySelector('input[name="visibility"][value="private"]').checked = true;
+          renderWall();
+        });
+
+        renderPatterns();
+        renderWall();
+      })();
+    </script>
   </body>
 </html>
